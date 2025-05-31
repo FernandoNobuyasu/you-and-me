@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import dandelion from '@assets/dandelion.gif';
+---
+
+<div class="dandelion">
+    <Image src={dandelion} alt="Dandelion" />
+
+</div>
+
+<style lang="scss">
+        img{
+            width: 250px;
+            height: 150px;
+            filter: invert(1);
+            mix-blend-mode: exclusion;
+            @media screen and (max-width: 600px) {
+                width: 200px;
+                height: 120px;
+                
+            }
+        }
+</style>

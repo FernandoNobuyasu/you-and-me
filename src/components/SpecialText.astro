@@ -1,0 +1,52 @@
+---
+const { specialText } = Astro.props;
+---
+
+<div class="specialText">{specialText}</div>
+
+<style>
+    .specialText {
+        display: none;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        span {
+            opacity: 0;
+            display: inline-block;
+        }
+    }
+</style>
+
+<script>
+    import anime from "animejs/lib/anime.es.js";
+
+    const textNodes = document.querySelectorAll(".specialText");
+    for (const textNode of textNodes) {
+
+        if (textNode && textNode.textContent) {
+        textNode.innerHTML = textNode.textContent
+            .split('/')
+            .map(line => line
+                .replace(/ (-|#|@){1}/g, (s) => s[1] + s[0])
+                .replace(/(\S*)/g, (m) => {
+                    return (
+                        `<span class="word">` +
+                        m.replace(/\S(-|#|@)?/g, "<span class='letter'>$&</span>") +
+                        `</span>`
+                    );
+                })
+            )
+            .join('<br>');
+
+        anime({
+            targets: ".specialText span",
+            translateY: ["1em", "0"],
+            opacity: [0, 1],
+            delay: anime.stagger(10),
+        });
+
+        (textNode as HTMLElement).style.display = "block"; // Show the text after animation is set up
+    }
+    }
+</script>

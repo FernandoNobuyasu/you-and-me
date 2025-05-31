@@ -1,0 +1,53 @@
+---
+import 'swiper/css';
+import { Image } from 'astro:assets';
+import carousel01 from '@assets/carousel01.jpg';
+import carousel02 from '@assets/carousel02.jpg';
+import carousel03 from '@assets/carousel03.jpg';
+import carousel04 from '@assets/carousel04.jpg';
+---
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <Image src={carousel01} alt="Holding Hands" />
+        </div>
+        <div class="swiper-slide">
+            <Image src={carousel02} alt="Fingers" />
+        </div>
+        <div class="swiper-slide">
+            <Image src={carousel03} alt="Palms" />
+        </div>
+        <div class="swiper-slide">
+            <Image src={carousel04} alt="Holding Hands 2" />
+        </div>
+    </div>
+</div>
+
+<style>
+    .swiper{
+        width: 300px;
+    }
+    .swiper-slide{
+        background: #262626;
+    }
+    img{
+        width: 300px;
+        height: 300px;
+        filter: invert(1);
+        mix-blend-mode: lighten;
+    }
+</style>
+
+<script>
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+Swiper.use([Autoplay]);
+
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+    },
+});
+</script>

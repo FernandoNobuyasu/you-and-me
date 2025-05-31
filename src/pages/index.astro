@@ -1,11 +1,71 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import BGMusic from '@components/BGMusic.astro';
+import Dandelion from '@components/Dandelion.astro';
+import SpecialText from '@components/SpecialText.astro';
+import Footer from '@components/Footer.astro';
+import RainBG from '@components/RainBG.astro';
+import PlayButton from '@components/PlayButton.astro';
+import Carousel from '@components/Carousel.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "You and me"
 ---
 
-<Layout>
-	<Welcome />
+<Layout pageTitle={pageTitle}>
+	<main>
+		<h1>
+			Podemos ser o refúgio um do outro?
+			<Dandelion />
+		</h1>
+		<div class="wrap">
+			<div>
+				<SpecialText specialText="Sei que as coisas não estão fáceis agora/Mas penso em você quando escuto nossa música/Ainda quero cuidar de você, segurar suas mãos/O frio não incomodava tanto, porque estavamos juntos/Esse cantinho é só nosso/Como o espaço dentro do meu casaco sempre foi seu/Um pequeno site pra te lembrar o quanto você é especial para mim"/>
+				<PlayButton />
+			</div>
+			<Carousel />
+		</div>
+		
+	</main>
+
+	<RainBG />
+	<BGMusic/>
+	<Footer />
 </Layout>
+
+<style lang="scss">
+	main{
+		padding: 15px;
+	}
+	h1{
+		font-family: "Dancing Script", cursive;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		gap: 10px;
+		font-size: 3rem;
+		margin-bottom: 50px;
+		@media screen and (max-width: 600px) {
+			font-size: 2.5rem;
+			flex-wrap: wrap;
+			margin-bottom: 20px;
+		}
+
+	}
+	
+    img{
+        width: 300px;
+        height: 300px;
+        filter: invert(1);
+        mix-blend-mode: multiply;
+    }
+
+	.wrap{
+		@media screen and (min-width: 600px) {
+			margin-inline: 100px;
+			display: grid;
+			grid-template-columns: 1fr 300px;
+		}
+	}
+</style>

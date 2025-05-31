@@ -9,6 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.2.3"
+    "@astrojs/preact": "^4.0.4",
+    "@fontsource/dancing-script": "^5.2.5",
+    "@fontsource/lato": "^5.2.5",
+    "@fontsource/twinkle-star": "^5.2.5",
+    "@tailwindcss/vite": "^4.1.8",
+    "animejs": "^3.2.2",
+    "astro": "^5.2.3",
+    "swiper": "^11.2.8",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.13",
+    "sass": "^1.83.4"
   }
 }
