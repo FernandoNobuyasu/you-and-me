@@ -1,5 +1,14 @@
 
-<canvas id="rain-canvas" class="fixed inset-0 z-0 pointer-events-none"></canvas>
+<canvas class="rain-canvas" id="rain-canvas" class="fixed inset-0 z-0 pointer-events-none"></canvas>
+
+<style>
+  .rain-canvas{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+</style>
 <script>
     interface Raindrop {
         x: number;

@@ -14,13 +14,13 @@ const pageTitle = "You and me"
 <Layout pageTitle={pageTitle}>
 	<main>
 		<h1>
+			<PlayButton />
 			Podemos ser o refúgio um do outro?
 			<Dandelion />
 		</h1>
 		<div class="wrap">
 			<div>
-				<SpecialText specialText="Sei que as coisas não estão fáceis agora/Mas penso em você quando escuto nossa música/Ainda quero cuidar de você, segurar suas mãos/O frio não incomodava tanto, porque estavamos juntos/Esse cantinho é só nosso/Como o espaço dentro do meu casaco sempre foi seu/Um pequeno site pra te lembrar o quanto você é especial para mim"/>
-				<PlayButton />
+				<SpecialText specialText="Sei que as coisas não estão fáceis agora/Mas penso em você quando escuto nossa música/Ainda quero cuidar de você, segurar suas mãos/O frio não incomodava tanto, porque estavamos juntos/Assim como o espaço dentro do meu casaco sempre foi seu/Esse cantinho é só nosso/Um pequeno site pra te lembrar o quanto você é especial para mim"/>
 			</div>
 			<Carousel />
 		</div>
@@ -45,27 +45,21 @@ const pageTitle = "You and me"
 		text-align: center;
 		gap: 10px;
 		font-size: 3rem;
-		margin-bottom: 50px;
 		@media screen and (max-width: 600px) {
 			font-size: 2.5rem;
 			flex-wrap: wrap;
-			margin-bottom: 20px;
+			gap: 0;
 		}
 
 	}
 	
-    img{
-        width: 300px;
-        height: 300px;
-        filter: invert(1);
-        mix-blend-mode: multiply;
-    }
 
 	.wrap{
 		@media screen and (min-width: 600px) {
 			margin-inline: 100px;
 			display: grid;
-			grid-template-columns: 1fr 300px;
+			align-items: center;
+			grid-template-columns: 1fr 30%;
 		}
 	}
 </style>

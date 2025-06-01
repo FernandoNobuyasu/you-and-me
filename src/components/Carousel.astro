@@ -26,14 +26,15 @@ import carousel04 from '@assets/carousel04.jpg';
 
 <style>
     .swiper{
-        width: 300px;
+        width: 100%;
     }
     .swiper-slide{
         background: #262626;
     }
     img{
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
         filter: invert(1);
         mix-blend-mode: lighten;
     }
@@ -46,6 +47,7 @@ Swiper.use([Autoplay]);
 
 const swiper = new Swiper('.swiper', {
     loop: true,
+    speed: 800,
     autoplay: {
         delay: 3000,
     },

@@ -8,8 +8,9 @@
         height: 25px;
         opacity: 0.5;
         margin-inline: auto;
+        display: block;
         @media screen and (min-width: 600px) {
-          position: absolute;
+          position: fixed;
           bottom: 10px;
           right: 10px;
           z-index: 1000;
@@ -18,7 +19,6 @@
 </style>
 
 <script>
-    console.log("rodou")
     const bgMusic = document.getElementById('bg-music');
   
     function playMusicOnce() {

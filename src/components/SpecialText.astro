@@ -8,9 +8,11 @@ const { specialText } = Astro.props;
     .specialText {
         display: none;
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         line-height: 1.5;
-        margin-bottom: 20px;
+        @media screen and (max-width: 600px) {
+            font-size: 1.2rem;
+        }
         span {
             opacity: 0;
             display: inline-block;
